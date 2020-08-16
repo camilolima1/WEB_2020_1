@@ -8,6 +8,7 @@ export default class List extends Component {
     constructor(props){
         super(props)
         this.state = { disciplinas: [] }
+        this.apagarElementoPorId = this.apagarElementoPorId.bind(this)
     }
 
     componentDidMount(){
@@ -30,9 +31,19 @@ export default class List extends Component {
         if(!this.state.disciplinas) return
         return this.state.disciplinas.map(
             (disciplina, i) => {
-                return <TableRow disciplina = {disciplina} key={i} />
+                return <TableRow disciplina = {disciplina} key={i} apagarElementoPorId={this.apagarElementoPorId} />
             }
         )
+    }
+
+    apagarElementoPorId(id){
+        let tempDisciplinas = this.state.disciplinas
+        for(let i = 0; i<tempDisciplinas.length; i++){
+            if(tempDisciplinas[i].id === id){
+                tempDisciplinas.splice(i,1)
+            }
+        }
+        this.setState({disciplinas:tempDisciplinas})
     }
 
     render() {
@@ -42,10 +53,11 @@ export default class List extends Component {
                 <table className='table table-striped'>
                     <thead>
                         <tr>
-                            <td>Id</td>
-                            <td>Nome</td>
-                            <td>Curso</td>
-                            <td>Capacidade</td>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Curso</th>
+                            <th>Capacidade</th>
+                            <th colSpan='2'></th>
                         </tr>
                     </thead>
                     <tbody>

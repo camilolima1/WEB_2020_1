@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
 import Create from './components/Create';
 import List from './components/List';
+import Edit from './components/Edit';
 import Home from './components/Home';
 
 export default class App extends Component {
@@ -32,14 +33,16 @@ export default class App extends Component {
                     List
                   </Link>
                 </li>
+
               </ul>
             </div>
           </nav>
 
-          <h2>Atividade 3</h2> <br /> <br/>
+          <h2>CRUD com Json-Server</h2> <br /> <br/>
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/create' component={Create} />
+            <Route path='/edit/:id' component={Edit} />
             <Route path='/list' component={List} />
           </Switch>
         </div>

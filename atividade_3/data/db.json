@@ -1,10 +1,10 @@
 {
   "disciplinas": [
     {
-      "id": 1,
       "nome": "CSGBD",
       "curso": "SI",
-      "capacidade": "50"
+      "capacidade": "40",
+      "id": 1
     },
     {
       "nome": "Web",
@@ -14,7 +14,7 @@
     },
     {
       "nome": "FBD",
-      "curso": "SI",
+      "curso": "CC",
       "capacidade": "50",
       "id": 3
     },
@@ -26,7 +26,7 @@
     },
     {
       "nome": "Matemática Discreta",
-      "curso": "SI",
+      "curso": "EC",
       "capacidade": "50",
       "id": 5
     },
