@@ -1,10 +1,26 @@
 const DisciplinaModel = require('../models/DisciplinaModel');
 
-let disciplinas = [];
-let _id = 0;
-let nome = "teste";
-let curso = "teste";
-let capacidade = 50;
+let disciplinas = [
+    {
+        _id: 0,
+        nome: 'CSGBD',
+        curso: 'SI',
+        capacidade: 40
+    },
+    {
+        _id: 1,
+        nome: 'Web',
+        curso: 'ES',
+        capacidade: 38
+    },
+    {
+        _id: 2,
+        nome: 'FBD',
+        curso: 'CC',
+        capacidade: 50
+    },
+];
+let _id = 3;
 
 class DisciplinaService{
     //post
@@ -23,9 +39,9 @@ class DisciplinaService{
         return disciplinas;
     }
 
-    static update(_id, data){
+    static update(id, data){
         for(let disciplina of disciplinas){
-            if(disciplina._id == _id){
+            if(disciplina._id == id){
                 disciplina.nome = data.nome;
                 disciplina.curso = data.curso;
                 disciplina.capacidade = data.capacidade;
@@ -35,9 +51,9 @@ class DisciplinaService{
         return null;
     }
 
-    static delete(_id){
+    static delete(id){
         for(let i = 0; i < disciplinas.length; i++){
-            if(disciplinas[i]._id == _id){
+            if(disciplinas[i]._id == id){
                 disciplinas.splice(i,1);
                 return true;
             }
@@ -45,9 +61,9 @@ class DisciplinaService{
         return false;
     }
 
-    static retrieve(_id){
+    static retrieve(id){
         for(let i = 0; i < disciplinas.length; i++){
-            if(disciplinas[i]._id == _id){
+            if(disciplinas[i]._id == id){
                 return disciplinas[i];
             }
         }
