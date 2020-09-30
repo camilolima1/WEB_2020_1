@@ -14,8 +14,8 @@ export default class Edit extends Component {
 
     componentDidMount(){
         //console.log("ID: "+ this.props.match.params.id)
-        //axios.get('http://localhost:3001/disciplinas/'+this.props.match.params.id)
-        axios.get('http://localhost:3002/disciplinas/retrieve/'+this.props.match.params.id)
+        //axios.get('http://localhost:3001/disciplinas/'+this.props.match.params.id) //json-server
+        axios.get('http://localhost:3002/disciplinas/retrieve/'+this.props.match.params.id) //express
         .then((res) => {
             this.setState({
                 nome:res.data.nome,

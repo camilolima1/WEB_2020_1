@@ -36,8 +36,8 @@ export default class Create extends Component {
             capacidade:this.state.capacidade
         }
 
-        //axios.post('http://localhost:3001/disciplinas/',novaDisciplina)
-        axios.post('http://localhost:3002/disciplinas/register',novaDisciplina)
+        //axios.post('http://localhost:3001/disciplinas/',novaDisciplina) //json-server
+        axios.post('http://localhost:3002/disciplinas/register',novaDisciplina) //express
         .then(
             (res)=>{
                 alert('Disciplina cadastrada com sucesso!')
